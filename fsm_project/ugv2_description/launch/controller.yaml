@@ -1,0 +1,23 @@
+ugv2_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  rb_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rb_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  rf_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rf_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  lb_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: lb_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  lf_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: lf_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}

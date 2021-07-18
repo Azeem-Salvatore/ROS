@@ -1,0 +1,26 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"imu_sensor_1" [label="imu_sensor_1"];
+"lb_wheel_1" [label="lb_wheel_1"];
+"lf_wheel_1" [label="lf_wheel_1"];
+"lidar_1" [label="lidar_1"];
+"pi_camera_1" [label="pi_camera_1"];
+"rb_wheel_1" [label="rb_wheel_1"];
+"rf_wheel_1" [label="rf_wheel_1"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "imu_joint" [label="xyz: 0 0 0.01275 \nrpy: 0 -0 0"]
+"imu_joint" -> "imu_sensor_1"
+"base_link" -> "lb_joint" [label="xyz: -0.075 0.08 0.03775 \nrpy: 0 -0 0"]
+"lb_joint" -> "lb_wheel_1"
+"base_link" -> "lf_joint" [label="xyz: 0.075 0.08 0.03775 \nrpy: 0 -0 0"]
+"lf_joint" -> "lf_wheel_1"
+"base_link" -> "lidar_joint" [label="xyz: 0.0275 0 0.08275 \nrpy: 0 -0 0"]
+"lidar_joint" -> "lidar_1"
+"base_link" -> "pi_joint" [label="xyz: 0.1 0 0.03775 \nrpy: 0 -0 0"]
+"pi_joint" -> "pi_camera_1"
+"base_link" -> "rb_joint" [label="xyz: -0.075 -0.08 0.03775 \nrpy: 0 -0 0"]
+"rb_joint" -> "rb_wheel_1"
+"base_link" -> "rf_joint" [label="xyz: 0.075 -0.08 0.03775 \nrpy: 0 -0 0"]
+"rf_joint" -> "rf_wheel_1"
+}
