@@ -52,7 +52,6 @@ def main(x):
 
         count += 1
         
-        print("count is",count)
 
 if __name__ == "__main__":
     
