@@ -5,12 +5,12 @@ from visualization_msgs.msg import MarkerArray
 import rospy
 import math
 
-topic = 'visualization_marker_array'
+topic = 'markerarray'
 publisher = rospy.Publisher(topic, MarkerArray, queue_size=10)
 
-rospy.init_node('register')
+rospy.init_node('Marker')
 
-markerArray = MarkerArray()
+ma = MarkerArray()
 
 count = 0
 MARKERS_MAX = 100
@@ -36,18 +36,18 @@ while not rospy.is_shutdown():
    # We add the new marker to the MarkerArray, removing the oldest
    # marker from it when necessary
    if(count > MARKERS_MAX):
-       markerArray.markers.pop(0)
+       ma.markers.pop(0)
 
-   markerArray.markers.append(marker)
+   ma.markers.append(marker)
 
    # Renumber the marker IDs
    id = 0
-   for m in markerArray.markers:
+   for m in ma.markers:
        m.id = id
        id += 1
 
    # Publish the MarkerArray
-   publisher.publish(markerArray)
+   publisher.publish(ma)
 
    count += 1
 
